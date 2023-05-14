@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import data from "./data.json";
+import Nod from "./component/nod";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Nod name={data[0].name}></Nod>
     </div>
   );
 }
 
 export default App;
+//<Nod key={index} whole={i} onClick={() => {}}></Nod>
+/*{data.map((i, index) => (
+  <p key={index}>{i.children.name}</p>
+  ))}*/
