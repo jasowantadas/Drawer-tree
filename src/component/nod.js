@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import dataa from "../data.json";
 function Nod(props) {
   const [doShow, setShow] = useState(false);
@@ -16,7 +16,7 @@ function Nod(props) {
       if (nodePos.children) {
         arr = nodePos.children.map((i) => i.name);
       }
-      console.log(arr);
+      console.log(arr); //Display in console
       return arr;
     }
     if (nodePos.children) {
@@ -42,7 +42,7 @@ function Nod(props) {
       <br></br>
       {childrens &&
         doShow &&
-        childrens.map((i, index) => <Nod key={index} name={i}></Nod>)}
+        childrens.map((i, index) => <Nod key={i + index} name={i}></Nod>)}
     </>
   );
 }
