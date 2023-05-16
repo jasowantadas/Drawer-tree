@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import dataa from "../data.json";
 import { useContext } from "react";
 import { Mycontext } from "../App";
 
@@ -8,7 +7,7 @@ function Nod(props) {
   const { dat, setDat } = useContext(Mycontext);
   const [doShow, setShow] = useState(false);
   const [childrens, setChildrens] = useState([]);
-  //const [temp, setTemp] = useState();
+
   function handleShow() {
     changeSho(name);
   }
@@ -30,13 +29,11 @@ function Nod(props) {
           return result;
         }
       }
-      //nodePos.children.forEach((i) => findChildrens(findName, i));
     }
   };
   function getSho(name) {
     const getShow = (node) => {
       if (node.name === name) {
-        //console.log(node.show);
         setShow(node.show);
         return node.show;
       }
@@ -63,15 +60,14 @@ function Nod(props) {
 
     updatedState.forEach((i) => changeShow(i));
 
-    // update the state with the modified array
+    // update the data with the modified data
     setDat(updatedState);
   }
   //**********************DFS*********************************/
   useEffect(() => {
     getSho(name);
-    //console.log(doShow);
     if (doShow) {
-      const childrenss = findChildrens(name, dataa[0]);
+      const childrenss = findChildrens(name, dat[0]);
       setChildrens(childrenss);
     }
   }, [doShow, dat]);
