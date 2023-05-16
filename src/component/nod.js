@@ -53,6 +53,7 @@ function Nod(props) {
     const changeShow = (node) => {
       if (node.name === name) {
         node.show = !node.show;
+        return;
       }
 
       if (node.children) {
